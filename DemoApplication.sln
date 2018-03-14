@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApplication", "DemoApplication.csproj", "{0A84D2EB-5143-4B84-8287-09901C767178}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urho3DNet", "Urho3DNet.csproj", "{38913C81-4703-4652-B17B-823BAA9B6508}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A84D2EB-5143-4B84-8287-09901C767178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A84D2EB-5143-4B84-8287-09901C767178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A84D2EB-5143-4B84-8287-09901C767178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A84D2EB-5143-4B84-8287-09901C767178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38913C81-4703-4652-B17B-823BAA9B6508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38913C81-4703-4652-B17B-823BAA9B6508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38913C81-4703-4652-B17B-823BAA9B6508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38913C81-4703-4652-B17B-823BAA9B6508}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
