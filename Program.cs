@@ -16,7 +16,7 @@ namespace DemoApplication
         public override void Update(float timeStep)
         {
             var d = new Quaternion(10 * timeStep, 20 * timeStep, 30 * timeStep);
-            GetNode().Rotate(d);
+            Node.Rotate(d);
         }
     }
 
@@ -43,7 +43,7 @@ namespace DemoApplication
 
         public override void Start()
         {
-            GetInput().SetMouseVisible(true);
+            Input.SetMouseVisible(true);
 
             context_.RegisterFactory<RotateObject>();
 
@@ -53,10 +53,10 @@ namespace DemoApplication
 
             camera_ = scene_.CreateChild("Camera");
             viewport_ = new Viewport(context_, scene_, camera_.CreateComponent<Camera>());
-            GetRenderer().SetViewport(0, viewport_);
+            Renderer.SetViewport(0, viewport_);
 
             // Background
-            GetRenderer().GetDefaultZone().SetFogColor(new Color(0.5f, 0.5f, 0.7f));
+            Renderer.DefaultZone.SetFogColor(new Color(0.5f, 0.5f, 0.7f));
 
             // Scene
             camera_.SetPosition(new Vector3(0, 2, -2));
@@ -65,8 +65,8 @@ namespace DemoApplication
             // Cube
             cube_ = scene_.CreateChild("Cube");
             var model = cube_.CreateComponent<StaticModel>();
-            model.SetModel(GetCache().GetResource<Model>("Models/Box.mdl"));
-            model.SetMaterial(0, GetCache().GetResource<Material>("Materials/Stone.xml"));
+            model.SetModel(Cache.GetResource<Model>("Models/Box.mdl"));
+            model.SetMaterial(0, Cache.GetResource<Material>("Materials/Stone.xml"));
             cube_.CreateComponent<RotateObject>();
 
             // Light
@@ -74,9 +74,6 @@ namespace DemoApplication
             light_.CreateComponent<Light>();
             light_.SetPosition(new Vector3(0, 2, -1));
             light_.LookAt(Vector3.ZERO);
-
-            var f = new XMLFile(context_);
-            cube_.SaveXML(f.GetOrCreateRoot("root"));
         }
     }
 
