@@ -74,6 +74,12 @@ namespace DemoApplication
             light_.CreateComponent<Light>();
             light_.SetPosition(new Vector3(0, 2, -1));
             light_.LookAt(Vector3.ZERO);
+
+            SubscribeToEvent(CoreEvents.E_UPDATE, args =>
+            {
+                var timestep = args[Update.P_TIMESTEP].Float;
+                Debug.Assert(this != null);
+            });
         }
     }
 
