@@ -18,5 +18,15 @@ set (NFD_NO_GTK ON CACHE BOOLEAN "" FORCE)
 add_subdirectory(dep/Urho3D)
 add_subdirectory(dep/Urho3DNet)
 
-include_external_msproject(DemoApplication ${CMAKE_CURRENT_SOURCE_DIR}/DemoApplication.csproj TYPE FAE04EC0-301F-11D3-BF4B-00C04F79EFBC)
-add_dependencies(DemoApplication Urho3DNet)
+find_program(MSBUILD msbuild)
+if (NOT MSBUILD)
+    find_program(MSBUILD xbuild)
+    if (NOT MSBUILD)
+        message(FATAL_ERROR "msbuild/xbuild not found.")
+    endif ()
+endif ()
+
+add_custom_target(DemoApplication
+    COMMAND ${MSBUILD} ${CMAKE_CURRENT_SOURCE_DIR}/DemoApplication.csproj
+    DEPENDS Urho3DNet
+)
