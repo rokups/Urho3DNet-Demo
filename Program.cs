@@ -34,11 +34,12 @@ namespace DemoApplication
 
         public override void Setup()
         {
+            var currentDir = Directory.GetCurrentDirectory();
             engineParameters_[EngineDefs.EP_FULL_SCREEN] = false;
             engineParameters_[EngineDefs.EP_WINDOW_WIDTH] = 1920;
             engineParameters_[EngineDefs.EP_WINDOW_HEIGHT] = 1080;
             engineParameters_[EngineDefs.EP_WINDOW_TITLE] = "Hello C#";
-            engineParameters_[EngineDefs.EP_RESOURCE_PREFIX_PATHS] = ";..";
+            engineParameters_[EngineDefs.EP_RESOURCE_PREFIX_PATHS] = $"{currentDir};{currentDir}/..";
         }
 
         public override void Start()
