@@ -39,7 +39,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Urho3DNet, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>build\bin\Urho3DNet.dll</HintPath>
+      <HintPath>$(OutputPath)\Urho3DNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 mkdir build
-cd build
+pushd build
 cmake ..
-cmake --build . --target Urho3DNet -- -j$(nproc --all)
+cmake --build . --target DemoApplication -- -j$(nproc --all)
+popd
