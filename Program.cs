@@ -10,7 +10,7 @@ namespace DemoApplication
     {
         public RotateObject(Context context) : base(context)
         {
-            SetUpdateEventMask(USE_UPDATE);
+            UpdateEventMask = USE_UPDATE;
         }
 
         public override void Update(float timeStep)
@@ -38,7 +38,7 @@ namespace DemoApplication
             engineParameters_[EngineDefs.EP_WINDOW_WIDTH] = 1920;
             engineParameters_[EngineDefs.EP_WINDOW_HEIGHT] = 1080;
             engineParameters_[EngineDefs.EP_WINDOW_TITLE] = "Hello C#";
-            engineParameters_[EngineDefs.EP_RESOURCE_PREFIX_PATHS] = Directory.GetCurrentDirectory();
+            engineParameters_[EngineDefs.EP_RESOURCE_PREFIX_PATHS] = ";..";
         }
 
         public override void Start()
@@ -56,23 +56,23 @@ namespace DemoApplication
             Renderer.SetViewport(0, viewport_);
 
             // Background
-            Renderer.DefaultZone.SetFogColor(new Color(0.5f, 0.5f, 0.7f));
+            Renderer.DefaultZone.FogColor = new Color(0.5f, 0.5f, 0.7f);
 
             // Scene
-            camera_.SetPosition(new Vector3(0, 2, -2));
+            camera_.Position = new Vector3(0, 2, -2);
             camera_.LookAt(Vector3.ZERO);
 
             // Cube
             cube_ = scene_.CreateChild("Cube");
             var model = cube_.CreateComponent<StaticModel>();
-            model.SetModel(Cache.GetResource<Model>("Models/Box.mdl"));
+            model.Model = Cache.GetResource<Model>("Models/Box.mdl");
             model.SetMaterial(0, Cache.GetResource<Material>("Materials/Stone.xml"));
             cube_.CreateComponent<RotateObject>();
 
             // Light
             light_ = scene_.CreateChild("Light");
             light_.CreateComponent<Light>();
-            light_.SetPosition(new Vector3(0, 2, -1));
+            light_.Position = new Vector3(0, 2, -1);
             light_.LookAt(Vector3.ZERO);
 
             SubscribeToEvent(CoreEvents.E_UPDATE, args =>
