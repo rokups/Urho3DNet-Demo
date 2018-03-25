@@ -40,9 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dep\Urho3DNet\CommonNet\**\*.cs" />
-    <Compile Include="dep\Urho3DNet\Urho3DNet\**\*.cs" />
-    <Compile Include="build\dep\Urho3DNet\Urho3DNet\**\*.cs" />
+    <Compile Include="dep\Urho3DNet\CSharp\Common\CSharp\**\*.cs" />
+    <Compile Include="dep\Urho3DNet\CSharp\Urho3D\CSharp\**\*.cs" />
+    <Compile Include="build\Urho3DNet\CSharp\**\*.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

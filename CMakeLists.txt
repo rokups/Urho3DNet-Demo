@@ -30,3 +30,7 @@ add_custom_target(DemoApplication
     COMMAND ${MSBUILD} ${CMAKE_CURRENT_SOURCE_DIR}/DemoApplication.csproj
     DEPENDS Urho3DNet
 )
+
+get_target_property(SOURCE_DIR Urho3D SOURCE_DIR)
+get_filename_component(SOURCE_DIR ${SOURCE_DIR} DIRECTORY)
+csharp_bind_target(Urho3D ${SOURCE_DIR})
