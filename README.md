@@ -11,10 +11,9 @@ This is a demo project of Urho3D .net bindings usage.
 
 ### Testing on Windows
 
-1. Install [prebuilt llvm/clang distribution](http://releases.llvm.org/5.0.1/LLVM-5.0.1-win64.exe) to `C:\LLVM`
-2. Open "Developer Command Prompt for VS 2017". Opening wrong command prompt may result in failure to find C# compiler.
-3. Run `CMake.bat`
-4. Run `build/bin/Debug/DemoApplication.exe`
+1. Install [prebuilt llvm/clang distribution](http://releases.llvm.org/5.0.1/LLVM-5.0.1-win64.exe) to `C:\Program Files\LLVM` (default path)
+2. Run `CMake.bat` (VS2017 required)
+3. Run `build/bin/Debug/DemoApplication.exe`
 
 ### Misc notes
 
