@@ -18,6 +18,10 @@ set (NFD_NO_GTK ON CACHE BOOLEAN "" FORCE)
 add_subdirectory(dep/Urho3D)
 add_subdirectory(dep/Urho3DNet)
 
+if (URHO3D_CSHARP_MONO)
+    add_subdirectory(MonoHost)
+endif ()
+
 find_program(MSBUILD msbuild)
 if (NOT MSBUILD)
     find_program(MSBUILD xbuild)
